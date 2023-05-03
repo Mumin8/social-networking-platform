@@ -16,6 +16,7 @@ db.sequelize = sequelize
 db.models = {}
 db.models.User = require('./User')(sequelize, Sequelize.DataTypes)
 db.models.Comments = require('./Comments')(sequelize, Sequelize.DataTypes);
+db.models.userRegForm = require('./userRegForm')(sequelize, Sequelize.DataTypes);
 
 //Define associations
 db.models.User.hasMany(db.models.Comments, {
@@ -23,4 +24,10 @@ db.models.User.hasMany(db.models.Comments, {
   onDelete: 'cascade'
 });
 db.models.Comments.belongsTo(db.models.User);
+
+db.models.userRegForm.hasMany(db.models.User, {
+  foreignKey: 'newUserId',
+  onDelete: 'cascade'
+});
+db.models.User.belongsTo(db.models.userRegForm);
 module.exports = db;

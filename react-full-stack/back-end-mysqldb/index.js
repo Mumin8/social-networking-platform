@@ -10,7 +10,7 @@ app.use(express.json());
   //await db.sequelize.sync();
 //})();
 
- 
+
 app.use(cors())
 
 app.get('/post',(req, res, next)=>{
@@ -24,6 +24,9 @@ app.use('/post', postRouter)
 
 const commentsRouter = require('./routes/Comments')
 app.use('/comment', commentsRouter)
+
+const usersRouter = require('./routes/Users')
+app.use('/register', usersRouter)
 
 db.sequelize.sync()
 .then(()=>{
