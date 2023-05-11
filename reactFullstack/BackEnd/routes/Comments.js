@@ -18,6 +18,8 @@ router.get('/:postId', async(req, res)=>{
 
 router.post('/', validateToken, async(req, res) => {
   try {
+    req.body.username = req.user.username
+    console.log(req.user.username)
     await Comments.Comments.create(req.body)
     .then((comment)=>{
       res.json(comment)

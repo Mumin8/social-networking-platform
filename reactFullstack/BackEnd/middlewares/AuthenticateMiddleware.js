@@ -5,6 +5,7 @@ const validateToken = (req, res, next) =>{
   if (!token) return res.json({error: "User not logged in"})
   try {
     const validToken = verify(token, "secretstring")
+    req.user = validToken
     if(validToken) return   next()
     }catch (e) {
     return res.json({error: e})
