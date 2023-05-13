@@ -7,15 +7,21 @@ const { validateToken } = require('../middlewares/AuthenticateMiddleware')
 
 router.post('/signup', async(req, res) => {
   try {
-    const {username, password}  = req.body
-    bcrypt.hash(password, 10)
+  //  const {username, password}  = req.body
+    const exists = await Users.findOne({
+      where : {
+        username: req.body.username
+      }
+    })
+    if(exists) return res.json({val: "this username exist"})
+    bcrypt.hash(req.body.password, 10)
     .then((hash) =>{
 
     Users.create(
-        {username: username,
+        {username: req.body.username,
          password:hash,
        }).then((user)=>{
-         res.json(user)
+         res.json({val:"Success"})
        })
      })
    } catch (e) {
@@ -43,17 +49,15 @@ router.post("/login", async(req, res)=>{
       },
       "secretstring"
     )
-      res.json(token)
+      res.json({token: token, username: user.username, id: user.id,})
     })
   } catch (error ){
     console.log(error)
   }
 
-
 })
 
 router.get('/register', validateToken, (req, res) =>{
   res.json(req.user)
-
 })
 module.exports = router

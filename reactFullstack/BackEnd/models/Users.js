@@ -11,12 +11,5 @@ module.exports = (sequelize, DataTypes) =>{
     },
 
   })
-  //  Users.associate = (models) =>{
-  //    Users.hasMany(models.Posts, {
-  //      foreignKey: "UserId",
-  //      onDelete: "cascade"
-  //    })
-  //    models.Posts.belongsTo(models.Users)
-  // }
   return Users
 }
