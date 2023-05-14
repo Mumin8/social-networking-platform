@@ -4,9 +4,10 @@
 ## Technologies involved in the backend:
 	bcrypt: 
 		For password encryption
-##      [npm install bcrypt](bcrypt.hash(myPlaintextPassword, saltRounds).then(function(hash) {
-                               // Store hash in your password DB.
-                              });)
+##      npm install bcrypt
+	bcrypt.hash(myPlaintextPassword, saltRounds).then(function(hash) {
+        // Store hash in your password DB.
+        });
 
 	cors:
 		To help make requests accessible from frontend
