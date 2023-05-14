@@ -2,7 +2,7 @@
 
 
 This is a fullstack project developed with react, express and with mysql databases.
-The project employs the some of the most used modern libraries and technologies.
+The project employs some of the most used modern libraries and technologies.
 Overall this project implement the most used crud operations which allows a client to signup and sign in .
 Ones the user is signed in he/she can post comments and also reply to the comments of other users.
 The user of a comment can delete it.
