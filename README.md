@@ -2,6 +2,10 @@
 
 
 This is a fullstack project developed with react, express and with mysql databases.
+Overall this project implement the most used crud operations which allows a client to signup and sign in .
+Ones the user is signed in he/she can post comments and also reply to the comments of other users.
+The user of a comment can delete it.
+Only users signed in with the correct details can comment on any post.
 
 ## 1. The Frontend   (reactFullstack/frontend)
 
@@ -13,4 +17,4 @@ This is a fullstack project developed with react, express and with mysql databas
 
 Routes HTTP POST requests to the specified `path` with the specified `callback` functions. For more information, see the [routing guide](https://expressjs.com/en/guide/routing.html).
 
-## For details about the project read the readme in the subdirectory (reactFullstack/frontend and reactFullstack/Backend)
+
