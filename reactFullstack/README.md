@@ -5,6 +5,7 @@
 	bcrypt: 
 		For password encryption
 ##      npm install bcrypt
+	const bcrypt = require('bcrypt');
 	bcrypt.hash(myPlaintextPassword, saltRounds).then(function(hash) {
         // Store hash in your password DB.
         });
@@ -13,12 +14,20 @@
 		To help make requests accessible from frontend
 	express:
 		The backend Framework/server for the project
+	
 	jsonwebtoken:
 		For authentication
+##	npm install jsonwebtoken
+##	usage: 	jwt.sign(payload, secretOrPrivateKey, [options, callback])
+	var jwt = require('jsonwebtoken');
+	var token = jwt.sign({ foo: 'bar' }, 'shhhhh');
+	
 	mysql2:
 		Mysql database
+	
 	sequelize:
 		The ORM to interract with the mysql database
+	
 	sequelize-cli:
 		The ORM the works with sequelize
 	
